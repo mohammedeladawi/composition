@@ -1,0 +1,17 @@
+.main-button {
+  color: #fff;
+  background-color: rgba($redColor, 0.8);
+  border: none;
+  padding: 8px 15px;
+  font: {
+    size: 15px;
+    weight: bold;
+  }
+  border-radius: 6px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: 0.2s;
+  &:hover {
+    background-color: $redColor;
+  }
+}

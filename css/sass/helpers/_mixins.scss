@@ -1,0 +1,36 @@
+@mixin overlay {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  weight: 100%;
+}
+
+/* 
+  ** Prefixer Mixin
+  ** Auto Add Prefixes To Properties 
+*/
+
+@mixin prefixer($property, $value, $prefixes: ()) {
+  @each $prefix in $prefixes {
+    #{"-" + $prefix + "-" + $property}: $value;
+  }
+  #{$property}: $value;
+}
+
+/* 
+  ** KeyFrame Mixin
+  ** Auto Add Prefixes To Keyframe 
+*/
+
+@mixin keyFrame($animation-name) {
+  @-webkit-keyframes #{$animation-name} {
+    @content;
+  }
+  @-moz-keyframes #{$animation-name} {
+    @content;
+  }
+  @keyframes #{$animation-name} {
+    @content;
+  }
+}
